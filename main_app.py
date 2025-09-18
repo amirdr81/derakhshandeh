@@ -350,22 +350,11 @@ class App(ctk.CTk):
                                      back_to_view_bol=self.show_view_bol)
         self.current_frame.pack(fill="both", expand=True)  
         
-# if __name__ == "__main__":
-#     app = App()
-#     app.attributes("-fullscreen", True)
-#     app.mainloop()
-
 if __name__ == "__main__":
     app = App()
-    
-    # گرفتن رزولوشن مانیتور
     screen_width = app.winfo_screenwidth()
     screen_height = app.winfo_screenheight()
-    
-    # ست کردن ابعاد متناسب با مانیتور
     app.geometry(f"{screen_width}x{screen_height}+0+0")
-    
-    # فعال کردن قابلیت کوچک‌سازی و بزرگ‌سازی
     app.resizable(True, True)
     
     app.mainloop()
