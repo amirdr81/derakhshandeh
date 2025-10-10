@@ -33,9 +33,9 @@ class LoginPage(ctk.CTkFrame):
         self.configure(fg_color=colors.light_green_1)
     
         def get_error():
-            if(not (self.username_entry.get() and self.password_entry.get())): return "لطفا مشخصات خود را وارد کنید."
-            elif(not self.does_user_exists(self.username_entry.get())): return "کاربری با این نام کاربری، وجود ندارد!"
-            elif(not self.does_match(self.username_entry.get(), self.password_entry.get())): return "رمز ورود اشتباه است!"
+            if(not (self.username_entry.get() and self.password_entry.get())): return "لطفا مشخصات خود را وارد کنید"
+            elif(not self.does_user_exists(self.username_entry.get())): return "کاربری با این نام کاربری، وجود ندارد"
+            elif(not self.does_match(self.username_entry.get(), self.password_entry.get())): return "رمز ورود اشتباه است"
             return "OK!"
         
         def show_error(text, delay_ms=3000):
