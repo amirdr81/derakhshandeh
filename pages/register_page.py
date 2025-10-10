@@ -123,7 +123,7 @@ class RegisterPage(ctk.CTkFrame):
         self.name_entry.focus()
         
         #فیلد نام خانوادگی
-        lastname_label = ctk.CTkLabel(main_box, text="نام خانوادگی:", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
+        lastname_label = ctk.CTkLabel(main_box, text=":نام‌خانوادگی", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
         lastname_label.place(relx=0.69, rely=0.26, anchor="center")
         self.lastname_entry = ctk.CTkEntry(main_box, placeholder_text="نام‌خانوادگی", height=36 , justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
         self.lastname_entry.place(relx=0.65, rely=0.31, anchor="center")
