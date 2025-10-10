@@ -146,7 +146,7 @@ class LoginPage(ctk.CTkFrame):
                                width=80,
                                cursor="hand2",
                                command=go_to_register)
-        forgot.place(relx=0.59, rely=0.87, anchor="w")
+        forgot.place(x=460, rely=0.87, anchor="e")
 
         #لیبل ارور ها
         self.error_label = ctk.CTkLabel(main_box, 
