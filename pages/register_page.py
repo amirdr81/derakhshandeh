@@ -116,7 +116,7 @@ class RegisterPage(ctk.CTkFrame):
         circle_canvas.create_line(float(main_box.winfo_screenwidth() / 22), 1, float(main_box.winfo_screenwidth() / 2.85), 1, fill=colors.white, width=1)
         
         #فیلد نام
-        name_label = ctk.CTkLabel(main_box, text="نام:", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
+        name_label = ctk.CTkLabel(main_box, text=":نام", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
         name_label.place(relx=0.94, rely=0.26, anchor="center")
         self.name_entry = ctk.CTkEntry(main_box, placeholder_text="نام", height=36 , justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
         self.name_entry.place(relx=0.87, rely=0.31, anchor="center")
