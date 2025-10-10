@@ -117,7 +117,7 @@ class RegisterPage(ctk.CTkFrame):
         
         #فیلد نام
         name_label = ctk.CTkLabel(main_box, text=":نام", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
-        name_label.place(relx=0.94, rely=0.26, anchor="center")
+        name_label.place(x=1060, rely=0.26, anchor="e")
         self.name_entry = ctk.CTkEntry(main_box, placeholder_text="نام", height=36 , justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
         self.name_entry.place(relx=0.87, rely=0.31, anchor="center")
         self.name_entry.focus()
@@ -129,8 +129,8 @@ class RegisterPage(ctk.CTkFrame):
         self.lastname_entry.place(relx=0.65, rely=0.31, anchor="center")
         
         #فیلد شماره تلفن
-        phone_number_label = ctk.CTkLabel(main_box, text="شماره همراه:", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
-        phone_number_label.place(relx=0.91, rely=0.36, anchor="center")
+        phone_number_label = ctk.CTkLabel(main_box, text=": شماره همراه", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
+        phone_number_label.place(x=1060, rely=0.36, anchor="e")
         self.phone_number_entry = ctk.CTkEntry(main_box, placeholder_text="تلفن", height=36 , justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
         self.phone_number_entry.place(relx=0.87, rely=0.41, anchor="center")
         

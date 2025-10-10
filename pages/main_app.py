@@ -49,7 +49,7 @@ class App(ctk.CTk):
         self.current_frame = None
         self.loged_in_username = None
         colors.set_theme_colors("green")
-        self.show_login()
+        self.show_register()
     
     def clear_frame(self):
         while self.current_frame:
