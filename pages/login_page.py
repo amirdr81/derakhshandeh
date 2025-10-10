@@ -138,7 +138,7 @@ class LoginPage(ctk.CTkFrame):
                                    hover_color=colors.green_3,
                                    command=login_check,)
         login_btn.place(relx=0.5, rely=0.8, anchor="center")
-        forgot = ctk.CTkButton(main_box, text="کنید... نام ثبت ندارید؟ اکانت",
+        forgot = ctk.CTkButton(main_box, text="... کنید نام ثبت ندارید؟ اکانت",
                                fg_color=colors.white,
                                hover_color=colors.white,
                                text_color=colors.blue_color,
