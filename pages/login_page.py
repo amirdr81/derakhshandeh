@@ -143,7 +143,7 @@ class LoginPage(ctk.CTkFrame):
                                hover_color=colors.white,
                                text_color=colors.blue_color,
                                bg_color=colors.white,
-                               width=80,
+                               width=81,
                                cursor="hand2",
                                command=go_to_register)
         forgot.place(x=460, rely=0.87, anchor="e")
