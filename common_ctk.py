@@ -109,6 +109,22 @@ def make_button(box, text, width, height, font, corner_radius, text_color,
     btn.place(relx=x, rely=y, anchor=anchor)
     return btn
 
+def make_button2(box, text, width, height, font, corner_radius, text_color,
+                bg_color, fg_color, hover_color, command, x, y, anchor):
+    btn = ctk.CTkButton(box, 
+                        text = text, 
+                        width = width, 
+                        height = height, 
+                        font = font, 
+                        corner_radius = corner_radius, 
+                        text_color = text_color, 
+                        bg_color = bg_color, 
+                        fg_color = fg_color, 
+                        hover_color = hover_color,
+                        command=command)
+    btn.place(x=x, y=y, anchor=anchor)
+    return btn
+
 def make_frame(box, width, height, bg_color, fg_color, border_color, border_width, corner_radius, x, y, anchor):
     frame = ctk.CTkFrame(box, 
                         width=width, 

@@ -33,9 +33,9 @@ class LoginPage(ctk.CTkFrame):
         self.configure(fg_color=colors.light_green_1)
     
         def get_error():
-            if(not (self.username_entry.get() and self.password_entry.get())): return "لطفا مشخصات خود را وارد کنید."
-            elif(not self.does_user_exists(self.username_entry.get())): return "کاربری با این نام کاربری، وجود ندارد!"
-            elif(not self.does_match(self.username_entry.get(), self.password_entry.get())): return "رمز ورود اشتباه است!"
+            if(not (self.username_entry.get() and self.password_entry.get())): return "لطفا مشخصات خود را وارد کنید"
+            elif(not self.does_user_exists(self.username_entry.get())): return "کاربری با این نام کاربری، وجود ندارد"
+            elif(not self.does_match(self.username_entry.get(), self.password_entry.get())): return "رمز ورود اشتباه است"
             return "OK!"
         
         def show_error(text, delay_ms=3000):
@@ -53,12 +53,18 @@ class LoginPage(ctk.CTkFrame):
         
 
         # کانتینر اصلی (باکس سبز سفید)
-        main_box = ctk.CTkFrame(self, width=float(self.master.winfo_screenwidth() / 3), 
-                                height=float(self.master.winfo_screenheight() / 1.5), 
+        # main_box = ctk.CTkFrame(self, width=float(self.master.winfo_screenwidth() / 3), 
+        #                         height=float(self.master.winfo_screenheight() / 1.5), 
+        #                         fg_color=colors.white,
+        #                         corner_radius=0)
+        # main_box.place(relx=0.5, rely=0.5, anchor="center")
+
+        main_box = ctk.CTkFrame(self, width=500, 
+                                height=600, 
                                 fg_color=colors.white,
                                 corner_radius=0)
         main_box.place(relx=0.5, rely=0.5, anchor="center")
-
+        
         # کانتینر اصلی (باکس سبز)
         top_box = ctk.CTkFrame(main_box, width=float(main_box.winfo_screenwidth()),
                                 height=float(main_box.winfo_screenheight() / 5), 
@@ -80,13 +86,13 @@ class LoginPage(ctk.CTkFrame):
         
         #فیلد نام کاربری
         username_label = ctk.CTkLabel(main_box, 
-                                      text="نام کاربری:", 
+                                      text="نام کاربری", 
                                       font=(None, 18, "bold"), 
                                       text_color=colors.black, 
                                       bg_color=colors.white)
         username_label.place(relx=0.83, rely=0.38, anchor="center")
         self.username_entry = ctk.CTkEntry(main_box, 
-                                      placeholder_text="نام کاربری", 
+                                      placeholder_text="کابری نام", 
                                       height=50 , justify="right", 
                                       width=float(main_box.winfo_screenwidth() / 3.5), 
                                       bg_color=colors.white, 
@@ -98,13 +104,13 @@ class LoginPage(ctk.CTkFrame):
         self.username_entry.focus()
         #فیلد رمز عبور
         password_label = ctk.CTkLabel(main_box, 
-                                      text="رمز عبور:", 
+                                      text="رمز عبور", 
                                       font=(None, 18, "bold"), 
                                       text_color=colors.black, 
                                       bg_color=colors.white)
         password_label.place(relx=0.84, rely=0.54, anchor="center")
         self.password_entry = ctk.CTkEntry(main_box, 
-                                      placeholder_text="رمز عبور", 
+                                      placeholder_text="عبور رمز", 
                                       height=50 , justify="right", 
                                       width=float(main_box.winfo_screenwidth() / 3.5), 
                                       bg_color=colors.white, 
@@ -116,9 +122,9 @@ class LoginPage(ctk.CTkFrame):
         self.password_entry.place(relx=0.5, rely=0.61, anchor="center")
         
         #خط بالای دکمه ها
-        circle_canvas = ctk.CTkCanvas(main_box, width=float(main_box.winfo_screenwidth() / 3.05), height=2, bg=colors.white, highlightthickness=0)
-        circle_canvas.place(relx=-0.06, rely=0.74)
-        circle_canvas.create_line(float(main_box.winfo_screenwidth() / 22), 1, float(main_box.winfo_screenwidth() / 2.85), 1, fill=colors.dark_green_6, width=1)
+        circle_canvas = ctk.CTkCanvas(main_box, width=450, height=2, bg=colors.white, highlightthickness=0)
+        circle_canvas.place(relx=0.5, rely=0.74, anchor='center')
+        circle_canvas.create_line(0, 1, float(main_box.winfo_screenwidth() / 2.85), 1, fill=colors.dark_green_6, width=1)
         
         #دکمه ورود
         login_btn = ctk.CTkButton(main_box, text="ورود", 
@@ -132,7 +138,7 @@ class LoginPage(ctk.CTkFrame):
                                    hover_color=colors.green_3,
                                    command=login_check,)
         login_btn.place(relx=0.5, rely=0.8, anchor="center")
-        forgot = ctk.CTkButton(main_box, text="اکانت ندارید؟ ثبت نام کنید...",
+        forgot = ctk.CTkButton(main_box, text="... کنید نام ثبت ندارید؟ اکانت",
                                fg_color=colors.white,
                                hover_color=colors.white,
                                text_color=colors.blue_color,
@@ -140,7 +146,7 @@ class LoginPage(ctk.CTkFrame):
                                width=80,
                                cursor="hand2",
                                command=go_to_register)
-        forgot.place(relx=0.59, rely=0.87, anchor="w")
+        forgot.place(x=460, rely=0.87, anchor="e")
 
         #لیبل ارور ها
         self.error_label = ctk.CTkLabel(main_box, 

@@ -250,7 +250,17 @@ users = [
 ]
 
 #کاربر وارد شده
-loged_in_user = {
+loged_in_user = {"name":"نیلا", 
+     "lastname":"سرکارات", 
+     "phone":"09234457861",
+     "id":"4860", 
+     "email":"nila@yahoo.com", 
+     "username":"nila", 
+     "password":"123", 
+     "role":"مدیر", 
+     "lastseen_date":"1404/03/30",
+     "lastseen_time":"23:11",
+     "notifications":[]
     }
 
 chats = [
