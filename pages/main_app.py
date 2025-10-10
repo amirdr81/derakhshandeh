@@ -49,7 +49,7 @@ class App(ctk.CTk):
         self.current_frame = None
         self.loged_in_username = None
         colors.set_theme_colors("green")
-        self.show_driver_info()
+        self.show_login()
     
     def clear_frame(self):
         while self.current_frame:
@@ -352,5 +352,9 @@ class App(ctk.CTk):
         
 if __name__ == "__main__":
     app = App()
-    app.attributes("-fullscreen", True)
+    screen_width = app.winfo_screenwidth()
+    screen_height = app.winfo_screenheight()
+    app.geometry(f"{screen_width}x{screen_height}+0+0")
+    app.resizable(True, True)
+    
     app.mainloop()

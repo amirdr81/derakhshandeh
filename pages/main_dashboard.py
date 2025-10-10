@@ -24,7 +24,7 @@ class Dashboard(ctk.CTkFrame):
                  go_to_workcart):
         super().__init__(parent)
         
-        def make_button(text, x, y, command):
+        def make_button(text, y, command):
             button = ctk.CTkButton(main_box, text=text, 
                                    width=440, height=50, 
                                    font=(None, 30, "bold"), 
@@ -34,7 +34,7 @@ class Dashboard(ctk.CTkFrame):
                                    fg_color=colors.dark_green_5, 
                                    hover_color=colors.green_3,
                                    command=command)
-            button.place(relx=x, rely=y, anchor="center")
+            button.place(relx=0.5, y=y, anchor="center")
             return button
 
         self.pack(fill="both", expand=True)
@@ -53,7 +53,7 @@ class Dashboard(ctk.CTkFrame):
                                   height=float(2.6 * main_box.winfo_screenheight()), 
                                   bg="white",
                                   highlightthickness=0)
-        my_canvas.place(relx=0.5, rely=0.5, anchor="center")
+        my_canvas.place(relx=0.5, y=410, anchor="center")
         r = 500
         x1 = main_box.winfo_screenwidth() / 2 - r
         y1 = main_box.winfo_screenheight() / 2 - r
@@ -73,19 +73,18 @@ class Dashboard(ctk.CTkFrame):
         dashboard_label_welcome.place(relx=0.5, rely=0.165, anchor="center")
         
         #دکمه ثبت اطلاعات
-        make_button("ثبت بارنامه", 0.5, 0.3, go_to_register_bol)
-        make_button("مشاهده بارنامه ها", 0.5, 0.39, go_to_view_bol)
-        make_button("گزارش‌گیری", 0.5, 0.48, go_to_report)
-        make_button("ثبت قرارداد", 0.5, 0.57, go_to_register_deal)
-        make_button("اطلاعات سیستمی", 0.5, 0.66, go_to_insystem_data)
-        data_button = make_button("اطلاعات رانندگان، ماشین‌ها و جایگاه‌ها", 0.5, 0.75, go_to_dashboard1)
+        make_button("ثبت بارنامه", 250, go_to_register_bol)
+        make_button("مشاهده بارنامه ها", 320, go_to_view_bol)
+        make_button("گزارش‌گیری", 390, go_to_report)
+        make_button("ثبت قرارداد", 460, go_to_register_deal)
+        make_button("اطلاعات سیستمی", 530, go_to_insystem_data)
+        data_button = make_button("اطلاعات رانندگان، ماشین‌ها و جایگاه‌ها", 600, go_to_dashboard1)
         data_button.configure(font=(None, 25, "bold"))
-        letters_btn = make_button("دبیرخانه", 0.5, 0.84, None)
+        letters_btn = make_button("دبیرخانه", 670, None)
         letters_btn.configure(state='disabled')
         def exit():
-            # insystem_data.loged_in_user = {}
-            go_to_login()
-        make_button("خروج از سامانه", 0.5, 0.93, exit)
+            self.master.destroy()
+        make_button("خروج از سامانه", 740, exit)
         
         #اعلانات
         #عکس اعلانات
@@ -105,15 +104,15 @@ class Dashboard(ctk.CTkFrame):
                                         corner_radius=150)
             number_label.place(x=70, y=20, anchor="w")
             
-        ck.make_button(main_box, "گفت‌و‌گو", 60, 30, (None, 15, "bold"),
+        ck.make_button2(main_box, "گفت‌و‌گو", 60, 30, (None, 15, "bold"),
                        60, colors.white,
                        colors.dark_green_6,
                        colors.green_3,
                        colors.light_green_1,
-                       go_to_chat_box, 0.97, 0.022, "ne")
+                       go_to_chat_box, 15, 20, "ne")
         
         
-        ck.make_button(main_box, "پروفایل", 60, 30, (None, 15, "bold"),
+        ck.make_button2(main_box, "پروفایل", 60, 30, (None, 15, "bold"),
                        60, colors.white,
                        colors.dark_green_6,
                        colors.green_3,

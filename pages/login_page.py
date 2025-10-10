@@ -80,13 +80,13 @@ class LoginPage(ctk.CTkFrame):
         
         #فیلد نام کاربری
         username_label = ctk.CTkLabel(main_box, 
-                                      text="نام کاربری:", 
+                                      text="نام کاربری", 
                                       font=(None, 18, "bold"), 
                                       text_color=colors.black, 
                                       bg_color=colors.white)
         username_label.place(relx=0.83, rely=0.38, anchor="center")
         self.username_entry = ctk.CTkEntry(main_box, 
-                                      placeholder_text="نام کاربری", 
+                                      placeholder_text="کابری نام", 
                                       height=50 , justify="right", 
                                       width=float(main_box.winfo_screenwidth() / 3.5), 
                                       bg_color=colors.white, 
@@ -98,13 +98,13 @@ class LoginPage(ctk.CTkFrame):
         self.username_entry.focus()
         #فیلد رمز عبور
         password_label = ctk.CTkLabel(main_box, 
-                                      text="رمز عبور:", 
+                                      text="رمز عبور", 
                                       font=(None, 18, "bold"), 
                                       text_color=colors.black, 
                                       bg_color=colors.white)
         password_label.place(relx=0.84, rely=0.54, anchor="center")
         self.password_entry = ctk.CTkEntry(main_box, 
-                                      placeholder_text="رمز عبور", 
+                                      placeholder_text="عبور رمز", 
                                       height=50 , justify="right", 
                                       width=float(main_box.winfo_screenwidth() / 3.5), 
                                       bg_color=colors.white, 
