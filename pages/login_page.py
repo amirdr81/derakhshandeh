@@ -90,7 +90,7 @@ class LoginPage(ctk.CTkFrame):
                                       font=(None, 18, "bold"), 
                                       text_color=colors.black, 
                                       bg_color=colors.white)
-        username_label.place(relx=0.83, rely=0.38, anchor="center")
+        username_label.place(x=460, rely=0.38, anchor="center")
         self.username_entry = ctk.CTkEntry(main_box, 
                                       placeholder_text="کابری نام", 
                                       height=50 , justify="right", 
