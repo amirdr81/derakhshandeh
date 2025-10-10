@@ -104,7 +104,7 @@ class LoginPage(ctk.CTkFrame):
                                       bg_color=colors.white)
         password_label.place(relx=0.84, rely=0.54, anchor="center")
         self.password_entry = ctk.CTkEntry(main_box, 
-                                      placeholder_text="عبور رمز", 
+                                      placeholder_text="عابر رمز", 
                                       height=50 , justify="right", 
                                       width=float(main_box.winfo_screenwidth() / 3.5), 
                                       bg_color=colors.white, 
