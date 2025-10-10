@@ -53,12 +53,18 @@ class LoginPage(ctk.CTkFrame):
         
 
         # کانتینر اصلی (باکس سبز سفید)
-        main_box = ctk.CTkFrame(self, width=float(self.master.winfo_screenwidth() / 3), 
-                                height=float(self.master.winfo_screenheight() / 1.5), 
+        # main_box = ctk.CTkFrame(self, width=float(self.master.winfo_screenwidth() / 3), 
+        #                         height=float(self.master.winfo_screenheight() / 1.5), 
+        #                         fg_color=colors.white,
+        #                         corner_radius=0)
+        # main_box.place(relx=0.5, rely=0.5, anchor="center")
+
+        main_box = ctk.CTkFrame(self, width=500, 
+                                height=600, 
                                 fg_color=colors.white,
                                 corner_radius=0)
         main_box.place(relx=0.5, rely=0.5, anchor="center")
-
+        
         # کانتینر اصلی (باکس سبز)
         top_box = ctk.CTkFrame(main_box, width=float(main_box.winfo_screenwidth()),
                                 height=float(main_box.winfo_screenheight() / 5), 
@@ -116,9 +122,9 @@ class LoginPage(ctk.CTkFrame):
         self.password_entry.place(relx=0.5, rely=0.61, anchor="center")
         
         #خط بالای دکمه ها
-        circle_canvas = ctk.CTkCanvas(main_box, width=float(main_box.winfo_screenwidth() / 3.05), height=2, bg=colors.white, highlightthickness=0)
-        circle_canvas.place(relx=-0.06, rely=0.74)
-        circle_canvas.create_line(float(main_box.winfo_screenwidth() / 22), 1, float(main_box.winfo_screenwidth() / 2.85), 1, fill=colors.dark_green_6, width=1)
+        circle_canvas = ctk.CTkCanvas(main_box, width=450, height=2, bg=colors.white, highlightthickness=0)
+        circle_canvas.place(relx=0.5, rely=0.74, anchor='center')
+        circle_canvas.create_line(0, 1, float(main_box.winfo_screenwidth() / 2.85), 1, fill=colors.dark_green_6, width=1)
         
         #دکمه ورود
         login_btn = ctk.CTkButton(main_box, text="ورود", 
