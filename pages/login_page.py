@@ -41,23 +41,15 @@ class LoginPage(ctk.CTkFrame):
         def show_error(text, delay_ms=3000):
             if(text != "OK!"):
                 self.error_label.configure(text=text)
-                self.error_label.place(relx=0.91, rely=0.91, anchor="e")
+                self.error_label.place(x=455, y=545, anchor="e")
                 self.error_label.after(delay_ms, lambda: self.error_label.place_forget())
             else: 
                 insystem_data.loged_in_user = self.get_user_all_data_via_username(self.username_entry.get())
-                # print(insystem_data.loged_in_user)
                 go_to_dashboard()
             
         def login_check():
             show_error(get_error())
         
-
-        # کانتینر اصلی (باکس سبز سفید)
-        # main_box = ctk.CTkFrame(self, width=float(self.master.winfo_screenwidth() / 3), 
-        #                         height=float(self.master.winfo_screenheight() / 1.5), 
-        #                         fg_color=colors.white,
-        #                         corner_radius=0)
-        # main_box.place(relx=0.5, rely=0.5, anchor="center")
 
         main_box = ctk.CTkFrame(self, width=500, 
                                 height=600, 
@@ -66,23 +58,23 @@ class LoginPage(ctk.CTkFrame):
         main_box.place(relx=0.5, rely=0.5, anchor="center")
         
         # کانتینر اصلی (باکس سبز)
-        top_box = ctk.CTkFrame(main_box, width=float(main_box.winfo_screenwidth()),
-                                height=float(main_box.winfo_screenheight() / 5), 
+        top_box = ctk.CTkFrame(main_box, width=500,
+                                height=150, 
                                 fg_color=colors.dark_green_6,
                                 corner_radius=0)
-        top_box.place(relx=0.5, rely=0.1, anchor="center")
+        top_box.place(x=250, y=75, anchor="center")
         
         #عنوان صفحه
         login_label = ctk.CTkLabel(top_box, text="صفحه ورود", font=(None, 35, "bold"), 
                                    text_color=colors.white, 
                                    bg_color=colors.dark_green_6)
-        login_label.place(relx=0.5, rely=0.5, anchor="center")
+        login_label.place(x=250, y=60, anchor="center")
         
         login_description_label = ctk.CTkLabel(top_box, text="برای ورود به صفحه، مشخصات خود را وارد کنید", 
                                                font=(None, 15), 
                                                text_color=colors.white, 
                                                bg_color=colors.dark_green_6)
-        login_description_label.place(relx=0.5, rely=0.7, anchor="center")
+        login_description_label.place(x=250, y=105, anchor="center")
         
         #فیلد نام کاربری
         username_label = ctk.CTkLabel(main_box, 
@@ -90,17 +82,17 @@ class LoginPage(ctk.CTkFrame):
                                       font=(None, 18, "bold"), 
                                       text_color=colors.black, 
                                       bg_color=colors.white)
-        username_label.place(x=460, rely=0.38, anchor="e")
+        username_label.place(x=460, y=220, anchor="e")
         self.username_entry = ctk.CTkEntry(main_box, 
                                       placeholder_text="کابری نام", 
                                       height=50 , justify="right", 
-                                      width=float(main_box.winfo_screenwidth() / 3.5), 
+                                      width=410, 
                                       bg_color=colors.white, 
                                       corner_radius=8, 
                                       border_color=colors.white, 
                                       fg_color=colors.light_gray_4, 
                                       text_color=colors.black)
-        self.username_entry.place(relx=0.5, rely=0.45, anchor="center")
+        self.username_entry.place(x=460, y=270, anchor="e")
         self.username_entry.focus()
         #فیلد رمز عبور
         password_label = ctk.CTkLabel(main_box, 
@@ -108,27 +100,27 @@ class LoginPage(ctk.CTkFrame):
                                       font=(None, 18, "bold"), 
                                       text_color=colors.black, 
                                       bg_color=colors.white)
-        password_label.place(x=460, rely=0.54, anchor="e")
+        password_label.place(x=460, y=330, anchor="e")
         self.password_entry = ctk.CTkEntry(main_box, 
                                       placeholder_text="عبور رمز", 
                                       height=50 , justify="right", 
-                                      width=float(main_box.winfo_screenwidth() / 3.5), 
+                                      width=410, 
                                       bg_color=colors.white, 
                                       corner_radius=8, 
                                       border_color=colors.white, 
                                       fg_color=colors.light_gray_4, 
                                       text_color=colors.black,
                                       show="*")
-        self.password_entry.place(relx=0.5, rely=0.61, anchor="center")
+        self.password_entry.place(x=460, y=380, anchor="e")
         
         #خط بالای دکمه ها
-        circle_canvas = ctk.CTkCanvas(main_box, width=450, height=2, bg=colors.white, highlightthickness=0)
-        circle_canvas.place(relx=0.5, rely=0.74, anchor='center')
+        circle_canvas = ctk.CTkCanvas(main_box, width=400, height=2, bg=colors.white, highlightthickness=0)
+        circle_canvas.place(x=250, y=435, anchor='center')
         circle_canvas.create_line(0, 1, float(main_box.winfo_screenwidth() / 2.85), 1, fill=colors.dark_green_6, width=1)
         
         #دکمه ورود
         login_btn = ctk.CTkButton(main_box, text="ورود", 
-                                   width=float(main_box.winfo_screenwidth() / 3.5), 
+                                   width=410, 
                                    height=50, 
                                    font=(None, 30, "bold"), 
                                    corner_radius=8, 
@@ -137,7 +129,7 @@ class LoginPage(ctk.CTkFrame):
                                    fg_color=colors.dark_green_5, 
                                    hover_color=colors.green_3,
                                    command=login_check,)
-        login_btn.place(relx=0.5, rely=0.8, anchor="center")
+        login_btn.place(x=250, y=470, anchor="center")
         forgot = ctk.CTkButton(main_box, text="... کنید نام ثبت ندارید؟ اکانت",
                                fg_color=colors.white,
                                hover_color=colors.white,
