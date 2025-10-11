@@ -35,7 +35,7 @@ class RegisterPage(ctk.CTkFrame):
 
         def show_error(text, delay_ms=3000):
             self.error_label.configure(text=text)
-            self.error_label.place(relx=0.9, rely=0.92, anchor="e")
+            self.error_label.place(x=530, y=585, anchor="e")
             self.error_label.after(delay_ms, lambda: self.error_label.place_forget())
         def register_user(delay_ms=3000):
             if(not (self.name_entry.get() and
@@ -54,7 +54,7 @@ class RegisterPage(ctk.CTkFrame):
             elif(self.is_password_strong(self.password_entry.get())): show_error(self.is_password_strong(self.password_entry.get()))
             else:
                 self.error_label.configure(text="ثبت نام شما با موفقیت انجام شد.\nدر صورت تأیید مدیریت، می‌توانید به سیستم وارد شوید.", text_color=colors.green_1)
-                self.error_label.place(relx=0.9, rely=0.92, anchor="e")
+                self.error_label.place(x=530, y=600, anchor="e")
                 self.error_label.after(3000, lambda: go_to_login())
                 
                 managers = cc.find_manager()
@@ -77,22 +77,22 @@ class RegisterPage(ctk.CTkFrame):
                     })
                 
         # کانتینر اصلی (باکس سبز سفید)
-        main_box = ctk.CTkFrame(self, width=float(self.master.winfo_screenwidth() / 1.3), 
-                                height=float(self.master.winfo_screenheight() / 1.5), 
+        main_box = ctk.CTkFrame(self, 1200, 
+                                height=650, 
                                 fg_color=colors.white,
                                 corner_radius=0)
         main_box.place(relx=0.5, rely=0.5, anchor="center")
 
         # کانتینر اصلی (باکس سبز)
-        right_box = ctk.CTkFrame(main_box, width=float(1 + self.master.winfo_screenwidth() / 2.6), 
-                                height=float(main_box.winfo_screenheight() / 1.5), 
+        right_box = ctk.CTkFrame(main_box, width=600, 
+                                height=650, 
                                 fg_color=colors.dark_green_6,
                                 corner_radius=0)
         right_box.place(relx=0.75, rely=0.5, anchor="center")
 
         #تصویر باکس سبز
-        width = 1 + self.master.winfo_screenwidth() / 2.6
-        height = self.master.winfo_screenheight() / 1.5
+        width = 601
+        height = 650
 
         box_w, box_h = int(width), int(height)
         picture_left = ctk.CTkFrame(main_box, width=box_w, height=box_h, fg_color="red", corner_radius=0)
@@ -102,71 +102,71 @@ class RegisterPage(ctk.CTkFrame):
 
         # Sign in بخش راست
         sign_in_label = ctk.CTkLabel(main_box, text="ثبت‌نام در سامانه", font=(None, 35, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
-        sign_in_label.place(relx=0.85, rely=0.13, anchor="center")
+        sign_in_label.place(x=1130, y=80, anchor="e")
         description_label = ctk.CTkLabel(main_box, 
                                          text="پس از پر کردن اطلاعات، در صورت تأیید مدیر، ثبت‌نام شما تکمیل خواهد شد ", 
                                          font=(None, 13), 
                                          text_color=colors.white,
                                          bg_color=colors.dark_green_6)
-        description_label.place(relx=0.79, rely=0.19, anchor="center")
+        description_label.place(x=1130, y=120, anchor="e")
         
         #خط پایین توضیحات
         circle_canvas = ctk.CTkCanvas(main_box, width=float(main_box.winfo_screenwidth() / 2.3), height=2, bg=colors.dark_green_6, highlightthickness=0)
-        circle_canvas.place(relx=0.5, rely=0.21)
+        circle_canvas.place(x=935, y=140, anchor='center')
         circle_canvas.create_line(float(main_box.winfo_screenwidth() / 22), 1, float(main_box.winfo_screenwidth() / 2.85), 1, fill=colors.white, width=1)
         
         #فیلد نام
-        name_label = ctk.CTkLabel(main_box, text="نام:", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
-        name_label.place(relx=0.94, rely=0.26, anchor="center")
+        name_label = ctk.CTkLabel(main_box, text=":نام", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
+        name_label.place(x=1130, y=180, anchor="e")
         self.name_entry = ctk.CTkEntry(main_box, placeholder_text="نام", height=36 , justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
-        self.name_entry.place(relx=0.87, rely=0.31, anchor="center")
+        self.name_entry.place(x=1130, y=210, anchor="e")
         self.name_entry.focus()
         
         #فیلد نام خانوادگی
-        lastname_label = ctk.CTkLabel(main_box, text="نام خانوادگی:", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
-        lastname_label.place(relx=0.69, rely=0.26, anchor="center")
+        lastname_label = ctk.CTkLabel(main_box, text=": نام‌خانوادگی", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
+        lastname_label.place(x=890, y=180, anchor="e")
         self.lastname_entry = ctk.CTkEntry(main_box, placeholder_text="نام‌خانوادگی", height=36 , justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
-        self.lastname_entry.place(relx=0.65, rely=0.31, anchor="center")
+        self.lastname_entry.place(x=890, y=210, anchor="e")
         
         #فیلد شماره تلفن
-        phone_number_label = ctk.CTkLabel(main_box, text="شماره همراه:", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
-        phone_number_label.place(relx=0.91, rely=0.36, anchor="center")
+        phone_number_label = ctk.CTkLabel(main_box, text=": شماره همراه", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
+        phone_number_label.place(x=1130, y=250, anchor="e")
         self.phone_number_entry = ctk.CTkEntry(main_box, placeholder_text="تلفن", height=36 , justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
-        self.phone_number_entry.place(relx=0.87, rely=0.41, anchor="center")
+        self.phone_number_entry.place(x=1130, y=280, anchor="e")
         
         #فیلد کد ملی
-        nationalCode_label = ctk.CTkLabel(main_box, text="کد ملی:", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
-        nationalCode_label.place(relx=0.71, rely=0.36, anchor="center")
-        self.nationalCode_entry = ctk.CTkEntry(main_box, placeholder_text="کد ملی", height=36 , justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
-        self.nationalCode_entry.place(relx=0.65, rely=0.41, anchor="center")
+        nationalCode_label = ctk.CTkLabel(main_box, text=": کدملی", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
+        nationalCode_label.place(x=890, y=250, anchor="e")
+        self.nationalCode_entry = ctk.CTkEntry(main_box, placeholder_text="کدملی", height=36 , justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
+        self.nationalCode_entry.place(x=890, y=280, anchor="e")
         
         #فیلد ایمیل
         email_label = ctk.CTkLabel(main_box, text="ایمیل:", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
-        email_label.place(relx=0.93, rely=0.46, anchor="center")
+        email_label.place(x=1130, y=320, anchor="e")
         self.email_entry = ctk.CTkEntry(main_box, placeholder_text="ایمیل", height=36 , justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
-        self.email_entry.place(relx=0.87, rely=0.51, anchor="center")
+        self.email_entry.place(x=1130, y=350, anchor="e")
         
         #فیلد نام کاربری
-        username_label = ctk.CTkLabel(main_box, text="نام کاربری:", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
-        username_label.place(relx=0.70, rely=0.46, anchor="center")
-        self.username_entry = ctk.CTkEntry(main_box, placeholder_text="نام کاربری", height=36 , justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
-        self.username_entry.place(relx=0.65, rely=0.51, anchor="center")
+        username_label = ctk.CTkLabel(main_box, text=": نام کاربری", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
+        username_label.place(x=890, y=320, anchor="e")
+        self.username_entry = ctk.CTkEntry(main_box, placeholder_text="کاربری نام", height=36 , justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
+        self.username_entry.place(x=890, y=350, anchor="e")
         
         #فیلد پسورد
-        password_label = ctk.CTkLabel(main_box, text="رمز عبور:", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
-        password_label.place(relx=0.92, rely=0.56, anchor="center")
-        self.password_entry = ctk.CTkEntry(main_box, placeholder_text="رمز عبور", height=36 , show="*", justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
-        self.password_entry.place(relx=0.87, rely=0.61, anchor="center")
+        password_label = ctk.CTkLabel(main_box, text=": رمز عبور", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
+        password_label.place(x=1130, y=390, anchor="e")
+        self.password_entry = ctk.CTkEntry(main_box, placeholder_text="عبور رمز", height=36 , show="*", justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
+        self.password_entry.place(x=1130, y=420, anchor="e")
         
         #فیلد تکرار پسورد
-        repet_password_label = ctk.CTkLabel(main_box, text="تکرار رمز عبور:", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
-        repet_password_label.place(relx=0.69, rely=0.56, anchor="center")
-        self.repet_password_entry = ctk.CTkEntry(main_box, placeholder_text="تکرار رمز عبور", show="*", height=36 , justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
-        self.repet_password_entry.place(relx=0.65, rely=0.61, anchor="center")
+        repet_password_label = ctk.CTkLabel(main_box, text=": تکرار رمز عبور", font=(None, 18, "bold"), text_color=colors.white, bg_color=colors.dark_green_6)
+        repet_password_label.place(x=890, y=390, anchor="e")
+        self.repet_password_entry = ctk.CTkEntry(main_box, placeholder_text="عبور رمز تکرار", show="*", height=36 , justify="right", width=200, bg_color=colors.dark_green_6, corner_radius=8, border_color=colors.dark_green_6, fg_color=colors.light_gray_4, text_color=colors.black)
+        self.repet_password_entry.place(x=890, y=420, anchor="e")
         
         #فیلد انتخاب نقش
         radio_frame = ctk.CTkFrame(right_box, bg_color=colors.dark_green_6, fg_color=colors.dark_green_6, width=right_box.winfo_screenwidth(), height=40)
-        radio_frame.place(relx=0.57, rely=0.7, anchor="center")
+        radio_frame.place(x=350, y=460, anchor="center")
         self.selected_role_var = ctk.StringVar(value="مدیر")
         desired_gap = 60
         admin_radio = ctk.CTkRadioButton(
@@ -201,7 +201,7 @@ class RegisterPage(ctk.CTkFrame):
 
         #خط بالای دکمه ها
         circle_canvas = ctk.CTkCanvas(main_box, width=float(main_box.winfo_screenwidth() / 2.3), height=2, bg=colors.dark_green_6, highlightthickness=0)
-        circle_canvas.place(relx=0.5, rely=0.74)
+        circle_canvas.place(x=935, y=485, anchor='center')
         circle_canvas.create_line(float(main_box.winfo_screenwidth() / 22), 1, float(main_box.winfo_screenwidth() / 2.85), 1, fill=colors.white, width=1)
         
         #دکمه ثبت اطلاعات
@@ -214,9 +214,9 @@ class RegisterPage(ctk.CTkFrame):
                                    fg_color=colors.green_1, 
                                    hover_color=colors.green_3,
                                    command=register_user)
-        signin_btn.place(relx=0.76, rely=0.8, anchor="center")
+        signin_btn.place(x=906, y=520, anchor="center")
         
-        forgot = ctk.CTkButton(main_box, text="قبلا ثبت‌نام کردید؟ وارد شوید...",
+        forgot = ctk.CTkButton(main_box, text="... شوید وارد کردید؟ نام ثبت قبلا",
                                fg_color=colors.dark_green_6,
                                hover_color=colors.dark_green_6,
                                text_color=colors.blue_color,
@@ -224,7 +224,7 @@ class RegisterPage(ctk.CTkFrame):
                                width=80,
                                cursor="hand2",
                                command=go_to_login)
-        forgot.place(relx=0.8, rely=0.87, anchor="w")
+        forgot.place(x=1120, y=560, anchor="e")
 
         #لیبل ارور ها
         self.error_label = ctk.CTkLabel(right_box, 

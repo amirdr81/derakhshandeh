@@ -90,7 +90,7 @@ class LoginPage(ctk.CTkFrame):
                                       font=(None, 18, "bold"), 
                                       text_color=colors.black, 
                                       bg_color=colors.white)
-        username_label.place(relx=0.83, rely=0.38, anchor="center")
+        username_label.place(x=460, rely=0.38, anchor="e")
         self.username_entry = ctk.CTkEntry(main_box, 
                                       placeholder_text="کابری نام", 
                                       height=50 , justify="right", 
@@ -108,7 +108,7 @@ class LoginPage(ctk.CTkFrame):
                                       font=(None, 18, "bold"), 
                                       text_color=colors.black, 
                                       bg_color=colors.white)
-        password_label.place(relx=0.84, rely=0.54, anchor="center")
+        password_label.place(x=460, rely=0.54, anchor="e")
         self.password_entry = ctk.CTkEntry(main_box, 
                                       placeholder_text="عبور رمز", 
                                       height=50 , justify="right", 
