@@ -54,7 +54,9 @@ class NotificationBox(ctk.CTkFrame):
                                 corner_radius=20,
                                 bg_color=colors.light_green_1,
                                 fg_color=colors.dark_green_6)
-        self.box.place(relx=0.24, rely=0.045, anchor="n")
+        self.box.place(x=int((self.parent.winfo_screenwidth() - 500) / 2), 
+                       y=int((self.parent.winfo_screenheight() - 780) / 2), 
+                       anchor="ne")
         #رسم دایره بالای باکس
         ctk.CTkFrame(self.box, width=400, height=400,
                                 corner_radius=200,

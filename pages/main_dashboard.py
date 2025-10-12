@@ -41,8 +41,8 @@ class Dashboard(ctk.CTkFrame):
         self.configure(fg_color=colors.light_green_1)
 
         # کانتینر اصلی (باکس اصلی)
-        main_box = ctk.CTkFrame(self, width=float(self.master.winfo_screenwidth() / 3), 
-                                height=float(self.master.winfo_screenheight() / 1.1), 
+        main_box = ctk.CTkFrame(self, width=500, 
+                                height=780, 
                                 fg_color=colors.white,
                                 corner_radius=0)
         main_box.place(relx=0.5, rely=0.5, anchor="center")
@@ -65,12 +65,12 @@ class Dashboard(ctk.CTkFrame):
         dashboard_label = ctk.CTkLabel(main_box, text="منوی اصلی", font=(None, 50, "bold"), 
                                    text_color=colors.white, 
                                    bg_color=colors.dark_green_6)
-        dashboard_label.place(relx=0.5, rely=0.1, anchor="center")
+        dashboard_label.place(x=250, y=70, anchor="center")
         
         dashboard_label_welcome = ctk.CTkLabel(main_box, text=insystem_data.loged_in_user["name"] + " عزیز، خوش اومدی...", font=(None, 20), 
                                    text_color=colors.white, 
                                    bg_color=colors.dark_green_6)
-        dashboard_label_welcome.place(relx=0.5, rely=0.165, anchor="center")
+        dashboard_label_welcome.place(x=250, y=120, anchor="center")
         
         #دکمه ثبت اطلاعات
         make_button("ثبت بارنامه", 250, go_to_register_bol)
@@ -109,7 +109,7 @@ class Dashboard(ctk.CTkFrame):
                        colors.dark_green_6,
                        colors.green_3,
                        colors.light_green_1,
-                       go_to_chat_box, 15, 20, "ne")
+                       go_to_chat_box, 480, 20, "ne")
         
         
         ck.make_button2(main_box, "پروفایل", 60, 30, (None, 15, "bold"),
@@ -117,5 +117,5 @@ class Dashboard(ctk.CTkFrame):
                        colors.dark_green_6,
                        colors.green_3,
                        colors.light_green_1,
-                       go_to_profile, 0.97, 0.072, "ne")
+                       go_to_profile, 480, 60, "ne")
         
